@@ -14,7 +14,7 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#09090f;
     color:white;
     overflow-x:hidden;
@@ -29,7 +29,7 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(0,0,0,.7);
+    background:rgba(0,0,0,.75);
     backdrop-filter:blur(15px);
 }
 
@@ -57,13 +57,14 @@ nav a:hover{
 .hero{
     min-height:100vh;
     background:
-    linear-gradient(to bottom,rgba(0,0,0,.5),rgba(9,9,15,1)),
+    linear-gradient(to bottom,rgba(0,0,0,.45),rgba(9,9,15,1)),
     url('https://i.ibb.co/fdksDXGf/Screenshot-2026-06-13-152946.png') center/cover no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
     padding:0 20px;
+    position:relative;
 }
 
 .hero-content{
@@ -100,6 +101,7 @@ nav a:hover{
     text-transform:uppercase;
     cursor:pointer;
     text-decoration:none;
+    transition:.25s;
 }
 
 .primary{
@@ -110,6 +112,31 @@ nav a:hover{
 .secondary{
     background:#1d1d28;
     color:white;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.scroll-indicator{
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+    color:#aaa;
+    font-size:13px;
+    animation:float 2s infinite;
+}
+
+.scroll-arrow{
+    font-size:24px;
+    margin-top:8px;
+}
+
+@keyframes float{
+    0%,100%{transform:translateX(-50%) translateY(0)}
+    50%{transform:translateX(-50%) translateY(8px)}
 }
 
 section{
@@ -179,18 +206,12 @@ section{
     border-radius:8px;
 }
 
-.cta{
-    text-align:center;
-}
-
-.cta h2{
-    font-size:3rem;
-    margin-bottom:20px;
-}
-
-.cta p{
-    color:#bbb;
-    margin-bottom:30px;
+.download-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
 }
 
 footer{
@@ -236,24 +257,28 @@ footer{
     <div class="hero-content">
         <h1>Relive Chapter 1 Season 8 with <span>Ether</span></h1>
         <p>
-            Jump back into the golden days of Fortnite with the original map,
-            arena system, progression, and unlockable cosmetics.
+            Jump back into classic Fortnite with arena, progression,
+            V-Bucks rewards, mobile support, and the original Chapter 1 map.
         </p>
 
         <div class="hero-buttons">
             <a href="https://www.youtube.com/watch?v=H3OeGkRFB5M" class="btn primary" target="_blank">Watch Trailer</a>
-            <a href="#features" class="btn secondary">View Features</a>
+            <a href="#features" class="btn secondary">Explore Features</a>
         </div>
+    </div>
+
+    <div class="scroll-indicator">
+        Scroll to learn more
+        <div class="scroll-arrow">↓</div>
     </div>
 </section>
 
 <section id="about">
     <h2 class="section-title">About Ether</h2>
     <div class="about">
-        Ether brings back the Chapter 1 Season 8 Fortnite experience with
-        classic gameplay, progression systems, and competitive arena.
-        Earn cosmetics by playing, grind levels, and experience one of the
-        most loved seasons in Fortnite history.
+        Ether recreates Fortnite Chapter 1 Season 8 with classic mechanics,
+        progression systems, and competitive gameplay. Earn cosmetics through
+        gameplay and relive one of Fortnite’s most iconic eras.
     </div>
 </section>
 
@@ -261,50 +286,15 @@ footer{
     <h2 class="section-title">Features</h2>
 
     <div class="features-grid">
-        <div class="card">
-            <h3>Arena</h3>
-            <p>Competitive arena mode fully integrated with hype progression.</p>
-        </div>
-
-        <div class="card">
-            <h3>Levels</h3>
-            <p>Progress through levels and earn rewards by playing matches.</p>
-        </div>
-
-        <div class="card">
-            <h3>V-Bucks Rewards</h3>
-            <p>Earn V-Bucks on eliminations and wins.</p>
-        </div>
-
-        <div class="card">
-            <h3>XP System</h3>
-            <p>Gain XP for kills and Victory Royales.</p>
-        </div>
-
-        <div class="card">
-            <h3>Hype System</h3>
-            <p>Gain hype for kills and wins in arena.</p>
-        </div>
-
-        <div class="card">
-            <h3>Launcher Stats</h3>
-            <p>View all your stats directly inside the launcher.</p>
-        </div>
-
-        <div class="card">
-            <h3>Server Status</h3>
-            <p>Live server status updates inside the launcher.</p>
-        </div>
-
-        <div class="card">
-            <h3>Mobile Support</h3>
-            <p>Supports both iOS and Android devices.</p>
-        </div>
-
-        <div class="card">
-            <h3>Full Map System</h3>
-            <p>The full map unlocks automatically when over 20 players remain.</p>
-        </div>
+        <div class="card"><h3>Arena</h3><p>Competitive ranked mode with hype progression.</p></div>
+        <div class="card"><h3>Levels</h3><p>Progress your account by grinding matches.</p></div>
+        <div class="card"><h3>V-Bucks</h3><p>Earn V-Bucks on kills and wins.</p></div>
+        <div class="card"><h3>XP System</h3><p>Gain XP from eliminations and wins.</p></div>
+        <div class="card"><h3>Hype System</h3><p>Gain hype through arena matches.</p></div>
+        <div class="card"><h3>Launcher Stats</h3><p>View stats directly in the launcher.</p></div>
+        <div class="card"><h3>Server Status</h3><p>Check server status live in the launcher.</p></div>
+        <div class="card"><h3>Mobile Support</h3><p>Play on iOS and Android.</p></div>
+        <div class="card"><h3>Full Map</h3><p>Unlocks when 20+ players remain.</p></div>
     </div>
 </section>
 
@@ -312,26 +302,20 @@ footer{
     <h2 class="section-title">Known Issues</h2>
 
     <div class="problem-list">
-        <div class="problem">
-            Server page in the launcher may be buggy.
-        </div>
-
-        <div class="problem">
-            You may spawn under the map after jumping from the bus. Fix by jumping once the black screen disappears.
-        </div>
-
-        <div class="problem">
-            Player count may sometimes display as 0 in-game.
-        </div>
+        <div class="problem">Server page in launcher may be buggy.</div>
+        <div class="problem">You may spawn under the map after bus jump. Jump after black screen disappears to fix.</div>
+        <div class="problem">Player count may sometimes show 0 in-game.</div>
     </div>
 </section>
 
-<section id="download" class="cta">
-    <h2>Ready to Play?</h2>
-    <p>Download Ether and relive Fortnite Chapter 1 Season 8 today.</p>
-    <a href="https://dl.fortforge.dev/download/aa6594c5-fce5-4549-93ad-5c74828c6dd9/build" class="btn primary" target="_blank">
-        Download Now
-    </a>
+<section id="download">
+    <h2 class="section-title">Download Ether</h2>
+
+    <div class="download-buttons">
+        <a href="https://dl.fortforge.dev/download/aa6594c5-fce5-4549-93ad-5c74828c6dd9/build" class="btn primary" target="_blank">PC Build</a>
+        <a href="https://github.com/lulucpp/projectAscend/releases/download/Launcher/Ether-8.51.ipa" class="btn secondary" target="_blank">iOS IPA</a>
+        <a href="https://www.mediafire.com/file/3euhlg5dquqmdz8/Ether.apk/file" class="btn secondary" target="_blank">Android APK</a>
+    </div>
 </section>
 
 <footer>
