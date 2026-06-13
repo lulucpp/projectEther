@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Ether - Chapter 1 Season 8</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ether</title>
 
 <style>
 *{
@@ -14,239 +14,329 @@
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#09090f;
+    font-family:Inter, Arial, sans-serif;
+    background:#06070d;
     color:white;
     overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.bg-glow{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+.glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.35;
+}
+
+.glow.one{
+    width:400px;
+    height:400px;
+    background:#6d3cff;
+    top:-100px;
+    left:-100px;
+}
+
+.glow.two{
+    width:500px;
+    height:500px;
+    background:#00a2ff;
+    right:-150px;
+    top:300px;
+}
+
+.glow.three{
+    width:350px;
+    height:350px;
+    background:#ff3cf2;
+    bottom:-100px;
+    left:40%;
 }
 
 header{
     position:fixed;
     width:100%;
     top:0;
-    z-index:1000;
-    padding:20px 60px;
+    padding:24px 50px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(0,0,0,.75);
-    backdrop-filter:blur(15px);
+    z-index:100;
+    backdrop-filter:blur(20px);
+    background:rgba(6,7,13,.65);
+    border-bottom:1px solid rgba(255,255,255,.04);
 }
 
 .logo{
-    height:45px;
+    height:40px;
 }
 
 nav{
     display:flex;
-    gap:35px;
+    gap:28px;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
     font-size:14px;
-    font-weight:700;
+    font-weight:600;
+    color:#cfcfcf;
     transition:.2s;
 }
 
 nav a:hover{
-    color:#8b3dff;
+    color:white;
 }
 
 .hero{
     min-height:100vh;
-    background:
-    linear-gradient(to bottom,rgba(0,0,0,.45),rgba(9,9,15,1)),
-    url('https://i.ibb.co/fdksDXGf/Screenshot-2026-06-13-152946.png') center/cover no-repeat;
-    display:flex;
+    display:grid;
+    grid-template-columns:1fr 1fr;
     align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:0 20px;
+    padding:120px 80px;
+    gap:60px;
     position:relative;
+    z-index:2;
 }
 
-.hero-content{
-    max-width:900px;
-}
-
-.hero h1{
-    font-size:5rem;
-    line-height:1;
+.hero-left h1{
+    font-size:5.5rem;
+    line-height:.95;
     margin-bottom:20px;
 }
 
-.hero h1 span{
-    color:#8b3dff;
+.hero-left h1 span{
+    background:linear-gradient(90deg,#8f5cff,#00a2ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-.hero p{
-    font-size:1.2rem;
-    color:#ccc;
-    margin-bottom:35px;
+.hero-left p{
+    color:#9d9d9d;
+    font-size:18px;
+    line-height:1.7;
+    max-width:550px;
+    margin-bottom:30px;
 }
 
 .hero-buttons{
     display:flex;
-    justify-content:center;
-    gap:20px;
+    gap:15px;
 }
 
 .btn{
-    padding:16px 30px;
-    border:none;
-    border-radius:8px;
-    font-weight:800;
-    text-transform:uppercase;
-    cursor:pointer;
-    text-decoration:none;
+    padding:15px 26px;
+    border-radius:14px;
+    font-weight:700;
+    font-size:14px;
     transition:.25s;
 }
 
 .primary{
-    background:#8b3dff;
-    color:white;
+    background:white;
+    color:black;
 }
 
 .secondary{
-    background:#1d1d28;
-    color:white;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.04);
 }
 
 .btn:hover{
     transform:translateY(-4px);
 }
 
-.scroll-indicator{
-    position:absolute;
-    bottom:40px;
-    left:50%;
-    transform:translateX(-50%);
-    text-align:center;
+.hero-right{
+    display:grid;
+    gap:20px;
+}
+
+.stat-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.05);
+    padding:24px;
+    border-radius:20px;
+    backdrop-filter:blur(18px);
+}
+
+.stat-card h3{
+    font-size:14px;
     color:#aaa;
-    font-size:13px;
-    animation:float 2s infinite;
+    margin-bottom:10px;
 }
 
-.scroll-arrow{
-    font-size:24px;
-    margin-top:8px;
+.stat-card strong{
+    font-size:26px;
 }
 
-@keyframes float{
-    0%,100%{transform:translateX(-50%) translateY(0)}
-    50%{transform:translateX(-50%) translateY(8px)}
+.section{
+    padding:120px 80px;
+    position:relative;
+    z-index:2;
 }
 
-section{
-    padding:100px 80px;
+.section-header{
+    max-width:700px;
+    margin-bottom:70px;
 }
 
-.section-title{
+.section-header h2{
     font-size:3rem;
-    margin-bottom:50px;
-    text-align:center;
+    margin-bottom:15px;
 }
 
-.about{
-    max-width:900px;
-    margin:auto;
-    text-align:center;
-    color:#b8b8b8;
-    font-size:18px;
+.section-header p{
+    color:#8d8d8d;
     line-height:1.8;
 }
 
-.features-grid{
+.feature-stack{
+    display:flex;
+    flex-direction:column;
+    gap:35px;
+}
+
+.feature-row{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:1fr 1fr;
     gap:25px;
 }
 
-.card{
-    background:#13131d;
-    padding:25px;
-    border-radius:14px;
-    border:1px solid rgba(255,255,255,.05);
-    transition:.25s;
+.feature-box{
+    padding:35px;
+    border-radius:22px;
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.02)
+    );
+    border:1px solid rgba(255,255,255,.04);
 }
 
-.card:hover{
-    transform:translateY(-6px);
-    border-color:#8b3dff;
-}
-
-.card h3{
+.feature-box h3{
+    font-size:1.5rem;
     margin-bottom:15px;
-    color:#8b3dff;
 }
 
-.card p{
-    color:#aaa;
-    line-height:1.6;
+.feature-box p{
+    color:#a0a0a0;
+    line-height:1.8;
 }
 
-.problems{
-    background:#111118;
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:18px;
 }
 
-.problem-list{
-    max-width:800px;
-    margin:auto;
+.tag{
+    padding:8px 14px;
+    border-radius:999px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.05);
+    font-size:13px;
+}
+
+.issues{
     display:flex;
     flex-direction:column;
     gap:20px;
 }
 
-.problem{
-    background:#1b1b25;
-    padding:20px;
-    border-left:4px solid #ff4747;
-    border-radius:8px;
+.issue{
+    padding:25px;
+    border-left:3px solid #ff5757;
+    background:rgba(255,255,255,.03);
+    border-radius:14px;
 }
 
-.download-buttons{
-    display:flex;
-    justify-content:center;
+.download-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
-    flex-wrap:wrap;
-    margin-top:30px;
+}
+
+.download-card{
+    padding:35px;
+    background:rgba(255,255,255,.04);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.04);
+}
+
+.download-card h3{
+    margin-bottom:12px;
+}
+
+.download-card p{
+    color:#999;
+    margin-bottom:20px;
+}
+
+.download-card a{
+    display:inline-block;
+    padding:14px 20px;
+    border-radius:12px;
+    background:white;
+    color:black;
+    font-weight:700;
 }
 
 footer{
-    padding:30px;
+    padding:40px;
     text-align:center;
-    color:#666;
+    color:#6d6d6d;
     border-top:1px solid rgba(255,255,255,.05);
+    position:relative;
+    z-index:2;
 }
 
-@media(max-width:768px){
+@media(max-width:900px){
+    .hero,
+    .feature-row,
+    .download-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-left h1{
+        font-size:3.5rem;
+    }
+
     header{
         padding:20px;
     }
 
-    nav{
-        gap:15px;
-    }
-
-    .hero h1{
-        font-size:2.8rem;
-    }
-
-    section{
+    .section{
         padding:80px 25px;
+    }
+
+    .hero{
+        padding:120px 25px;
     }
 }
 </style>
 </head>
 <body>
 
+<div class="bg-glow">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+    <div class="glow three"></div>
+</div>
+
 <header>
     <img src="https://i.ibb.co/N6vd9RFB/Ether.png" class="logo">
 
     <nav>
-        <a href="#about">About</a>
         <a href="#features">Features</a>
         <a href="#issues">Issues</a>
         <a href="#download">Download</a>
@@ -254,72 +344,140 @@ footer{
 </header>
 
 <section class="hero">
-    <div class="hero-content">
-        <h1>Relive Chapter 1 Season 8 with <span>Ether</span></h1>
+    <div class="hero-left">
+        <h1>Chapter 1.<br><span>Season 8</span></h1>
+
         <p>
-            Jump back into classic Fortnite with arena, progression,
-            V-Bucks rewards, mobile support, and the original Chapter 1 map.
+            Experience the return of classic Fortnite with arena, levels,
+            rewards, mobile support, and original progression systems rebuilt.
         </p>
 
         <div class="hero-buttons">
             <a href="https://www.youtube.com/watch?v=H3OeGkRFB5M" class="btn primary" target="_blank">Watch Trailer</a>
-            <a href="#features" class="btn secondary">Explore Features</a>
+            <a href="#features" class="btn secondary">Scroll Down</a>
         </div>
     </div>
 
-    <div class="scroll-indicator">
-        Scroll to learn more
-        <div class="scroll-arrow">↓</div>
+    <div class="hero-right">
+        <div class="stat-card">
+            <h3>Season</h3>
+            <strong>8.51</strong>
+        </div>
+
+        <div class="stat-card">
+            <h3>Platforms</h3>
+            <strong>PC • iOS • Android</strong>
+        </div>
+
+        <div class="stat-card">
+            <h3>Status</h3>
+            <strong>Online</strong>
+        </div>
     </div>
 </section>
 
-<section id="about">
-    <h2 class="section-title">About Ether</h2>
-    <div class="about">
-        Ether recreates Fortnite Chapter 1 Season 8 with classic mechanics,
-        progression systems, and competitive gameplay. Earn cosmetics through
-        gameplay and relive one of Fortnite’s most iconic eras.
+<section class="section" id="features">
+    <div class="section-header">
+        <h2>Everything You Need</h2>
+        <p>
+            Ether brings back progression, competition, and rewards with
+            systems designed to recreate Chapter 1 Season 8.
+        </p>
+    </div>
+
+    <div class="feature-stack">
+
+        <div class="feature-row">
+            <div class="feature-box">
+                <h3>Competitive Arena</h3>
+                <p>Gain hype through eliminations and wins with ranked matchmaking.</p>
+                <div class="tags">
+                    <div class="tag">Arena</div>
+                    <div class="tag">Hype</div>
+                    <div class="tag">Ranked</div>
+                </div>
+            </div>
+
+            <div class="feature-box">
+                <h3>Progression System</h3>
+                <p>Earn XP, levels, and V-Bucks from kills and victories.</p>
+                <div class="tags">
+                    <div class="tag">XP</div>
+                    <div class="tag">Levels</div>
+                    <div class="tag">Rewards</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-box">
+                <h3>Launcher Integration</h3>
+                <p>View server status and player stats directly inside the launcher.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Mobile Ready</h3>
+                <p>Play on iOS and Android with full support.</p>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-box">
+                <h3>Dynamic Map System</h3>
+                <p>The full map unlocks once the player count drops below 20.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Classic Chapter 1</h3>
+                <p>Built around the original Season 8 mechanics and gameplay flow.</p>
+            </div>
+        </div>
+
     </div>
 </section>
 
-<section id="features">
-    <h2 class="section-title">Features</h2>
+<section class="section" id="issues">
+    <div class="section-header">
+        <h2>Known Issues</h2>
+        <p>Current issues being worked on.</p>
+    </div>
 
-    <div class="features-grid">
-        <div class="card"><h3>Arena</h3><p>Competitive ranked mode with hype progression.</p></div>
-        <div class="card"><h3>Levels</h3><p>Progress your account by grinding matches.</p></div>
-        <div class="card"><h3>V-Bucks</h3><p>Earn V-Bucks on kills and wins.</p></div>
-        <div class="card"><h3>XP System</h3><p>Gain XP from eliminations and wins.</p></div>
-        <div class="card"><h3>Hype System</h3><p>Gain hype through arena matches.</p></div>
-        <div class="card"><h3>Launcher Stats</h3><p>View stats directly in the launcher.</p></div>
-        <div class="card"><h3>Server Status</h3><p>Check server status live in the launcher.</p></div>
-        <div class="card"><h3>Mobile Support</h3><p>Play on iOS and Android.</p></div>
-        <div class="card"><h3>Full Map</h3><p>Unlocks when 20+ players remain.</p></div>
+    <div class="issues">
+        <div class="issue">Launcher server page may be buggy.</div>
+        <div class="issue">Spawn under map can happen if you jump too early.</div>
+        <div class="issue">Player count may display 0 occasionally.</div>
     </div>
 </section>
 
-<section id="issues" class="problems">
-    <h2 class="section-title">Known Issues</h2>
-
-    <div class="problem-list">
-        <div class="problem">Server page in launcher may be buggy.</div>
-        <div class="problem">You may spawn under the map after bus jump. Jump after black screen disappears to fix.</div>
-        <div class="problem">Player count may sometimes show 0 in-game.</div>
+<section class="section" id="download">
+    <div class="section-header">
+        <h2>Play Now</h2>
+        <p>Choose your platform and jump in.</p>
     </div>
-</section>
 
-<section id="download">
-    <h2 class="section-title">Download Ether</h2>
+    <div class="download-grid">
+        <div class="download-card">
+            <h3>PC Build</h3>
+            <p>Full launcher build for Windows.</p>
+            <a href="https://dl.fortforge.dev/download/aa6594c5-fce5-4549-93ad-5c74828c6dd9/build" target="_blank">Download</a>
+        </div>
 
-    <div class="download-buttons">
-        <a href="https://dl.fortforge.dev/download/aa6594c5-fce5-4549-93ad-5c74828c6dd9/build" class="btn primary" target="_blank">PC Build</a>
-        <a href="https://github.com/lulucpp/projectAscend/releases/download/Launcher/Ether-8.51.ipa" class="btn secondary" target="_blank">iOS IPA</a>
-        <a href="https://www.mediafire.com/file/3euhlg5dquqmdz8/Ether.apk/file" class="btn secondary" target="_blank">Android APK</a>
+        <div class="download-card">
+            <h3>iOS IPA</h3>
+            <p>Install on supported iOS devices.</p>
+            <a href="https://github.com/lulucpp/projectAscend/releases/download/Launcher/Ether-8.51.ipa" target="_blank">Download</a>
+        </div>
+
+        <div class="download-card">
+            <h3>Android APK</h3>
+            <p>Play on Android devices.</p>
+            <a href="https://www.mediafire.com/file/3euhlg5dquqmdz8/Ether.apk/file" target="_blank">Download</a>
+        </div>
     </div>
 </section>
 
 <footer>
-    Ether © 2026 — Built for the community.
+    Ether © 2026
 </footer>
 
 </body>
