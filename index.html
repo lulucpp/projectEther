@@ -2,198 +2,202 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ether</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ether - Chapter 1 Season 8</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:Inter, sans-serif;
-    background:
-    linear-gradient(135deg, rgba(10,10,20,.9), rgba(30,10,50,.85)),
-    url('https://i.ibb.co/fdksDXGf/Screenshot-2026-06-13-152946.png') center/cover no-repeat;
-    min-height:100vh;
-    color:#fff;
+    font-family:Arial, sans-serif;
+    background:#09090f;
+    color:white;
     overflow-x:hidden;
 }
 
 header{
+    position:fixed;
     width:100%;
-    padding:25px 50px;
+    top:0;
+    z-index:1000;
+    padding:20px 60px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    position:fixed;
-    top:0;
-    z-index:10;
+    background:rgba(0,0,0,.7);
+    backdrop-filter:blur(15px);
 }
 
 .logo{
-    height:42px;
+    height:45px;
 }
 
 nav{
     display:flex;
-    gap:30px;
+    gap:35px;
 }
 
 nav a{
-    color:#fff;
+    color:white;
     text-decoration:none;
     font-size:14px;
-    font-weight:600;
-    letter-spacing:.08em;
-    transition:.25s;
+    font-weight:700;
+    transition:.2s;
 }
 
 nav a:hover{
-    color:#b84cff;
+    color:#8b3dff;
 }
 
 .hero{
     min-height:100vh;
+    background:
+    linear-gradient(to bottom,rgba(0,0,0,.5),rgba(9,9,15,1)),
+    url('https://i.ibb.co/fdksDXGf/Screenshot-2026-06-13-152946.png') center/cover no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:120px 20px 40px;
-}
-
-.hero-box{
-    width:100%;
-    max-width:850px;
     text-align:center;
-    padding:50px;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(18px);
-    border-radius:28px;
-    box-shadow:0 30px 80px rgba(0,0,0,.45);
+    padding:0 20px;
 }
 
-.tag{
-    display:inline-block;
-    padding:8px 18px;
-    background:rgba(184,76,255,.15);
-    border:1px solid rgba(184,76,255,.4);
-    border-radius:50px;
-    font-size:12px;
-    text-transform:uppercase;
-    font-weight:700;
-    margin-bottom:25px;
-    letter-spacing:.08em;
+.hero-content{
+    max-width:900px;
 }
 
-h1{
-    font-size:4.5rem;
+.hero h1{
+    font-size:5rem;
     line-height:1;
     margin-bottom:20px;
-    font-weight:900;
 }
 
-.highlight{
-    background:linear-gradient(90deg,#b84cff,#6d4cff);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+.hero h1 span{
+    color:#8b3dff;
 }
 
-.desc{
-    font-size:18px;
-    color:rgba(255,255,255,.75);
-    max-width:600px;
-    margin:0 auto 40px;
-    line-height:1.6;
+.hero p{
+    font-size:1.2rem;
+    color:#ccc;
+    margin-bottom:35px;
 }
 
-.actions{
+.hero-buttons{
     display:flex;
-    flex-direction:column;
+    justify-content:center;
     gap:20px;
-    max-width:500px;
-    margin:0 auto;
-}
-
-.group{
-    width:100%;
 }
 
 .btn{
-    width:100%;
-    padding:18px;
+    padding:16px 30px;
     border:none;
-    border-radius:14px;
-    font-size:15px;
+    border-radius:8px;
     font-weight:800;
     text-transform:uppercase;
     cursor:pointer;
-    transition:.25s;
+    text-decoration:none;
 }
 
 .primary{
-    background:linear-gradient(90deg,#b84cff,#7a32ff);
-    color:#fff;
-}
-
-.primary:hover{
-    transform:translateY(-3px);
-    box-shadow:0 15px 35px rgba(184,76,255,.35);
+    background:#8b3dff;
+    color:white;
 }
 
 .secondary{
-    background:linear-gradient(90deg,#3f7cff,#4c56ff);
-    color:#fff;
-}
-
-.secondary:hover{
-    transform:translateY(-3px);
-    box-shadow:0 15px 35px rgba(63,124,255,.35);
-}
-
-.disabled{
-    opacity:.45;
-    pointer-events:none;
-}
-
-.dropdown{
-    margin-top:10px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    max-height:0;
-    opacity:0;
-    overflow:hidden;
-    transition:.3s;
-}
-
-.dropdown.show{
-    max-height:120px;
-    opacity:1;
-}
-
-.dropdown a{
-    padding:15px;
-    text-decoration:none;
-    background:rgba(255,255,255,.07);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:12px;
+    background:#1d1d28;
     color:white;
-    font-weight:700;
+}
+
+section{
+    padding:100px 80px;
+}
+
+.section-title{
+    font-size:3rem;
+    margin-bottom:50px;
+    text-align:center;
+}
+
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    color:#b8b8b8;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.features-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#13131d;
+    padding:25px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.05);
     transition:.25s;
 }
 
-.dropdown a:hover{
-    background:rgba(184,76,255,.18);
-    border-color:#b84cff;
+.card:hover{
+    transform:translateY(-6px);
+    border-color:#8b3dff;
 }
 
-.footer-text{
-    margin-top:30px;
-    font-size:13px;
-    color:rgba(255,255,255,.45);
+.card h3{
+    margin-bottom:15px;
+    color:#8b3dff;
+}
+
+.card p{
+    color:#aaa;
+    line-height:1.6;
+}
+
+.problems{
+    background:#111118;
+}
+
+.problem-list{
+    max-width:800px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.problem{
+    background:#1b1b25;
+    padding:20px;
+    border-left:4px solid #ff4747;
+    border-radius:8px;
+}
+
+.cta{
+    text-align:center;
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.cta p{
+    color:#bbb;
+    margin-bottom:30px;
+}
+
+footer{
+    padding:30px;
+    text-align:center;
+    color:#666;
+    border-top:1px solid rgba(255,255,255,.05);
 }
 
 @media(max-width:768px){
@@ -205,103 +209,134 @@ h1{
         gap:15px;
     }
 
-    h1{
-        font-size:2.7rem;
+    .hero h1{
+        font-size:2.8rem;
     }
 
-    .hero-box{
-        padding:35px 25px;
-    }
-
-    .dropdown{
-        grid-template-columns:1fr;
+    section{
+        padding:80px 25px;
     }
 }
 </style>
 </head>
-
 <body>
 
 <header>
     <img src="https://i.ibb.co/N6vd9RFB/Ether.png" class="logo">
 
     <nav>
-        <a href="https://www.youtube.com/watch?v=H3OeGkRFB5M" target="_blank">Trailer</a>
-        <a href="https://discord.gg/mnvGzPWEVb" target="_blank">Discord</a>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#issues">Issues</a>
+        <a href="#download">Download</a>
     </nav>
 </header>
 
 <section class="hero">
-    <div class="hero-box">
-        <div class="tag">Chapter 1 Season 8 Live</div>
-
-        <h1>
-            Return to the Golden Era of <span class="highlight">Fortnite</span>
-        </h1>
-
-        <p class="desc">
-            Experience Chapter 1 Season 8 again with unlockable cosmetics, classic gameplay, and a fully rebuilt progression system.
+    <div class="hero-content">
+        <h1>Relive Chapter 1 Season 8 with <span>Ether</span></h1>
+        <p>
+            Jump back into the golden days of Fortnite with the original map,
+            arena system, progression, and unlockable cosmetics.
         </p>
 
-        <div class="actions">
-            <div class="group">
-                <button id="tutorialBtn" class="btn primary">
-                    Watch Tutorial
-                </button>
-
-                <div id="tutorialDropdown" class="dropdown">
-                    <a href="https://www.youtube.com/watch?v=H3OeGkRFB5M" target="_blank" class="tutorial-option">
-                        Season 8 Trailer
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=8-qAiQ67Di8" target="_blank" class="tutorial-option">
-                        Build Extract
-                    </a>
-                </div>
-            </div>
-
-            <div class="group">
-                <button id="getStartedBtn" class="btn secondary disabled">
-                    Complete Tutorial First
-                </button>
-
-                <div id="getStartedDropdown" class="dropdown">
-                    <a href="#">Soon</a>
-                    <a href="https://dl.fortforge.dev/download/aa6594c5-fce5-4549-93ad-5c74828c6dd9/build" target="_blank">
-                        Download Build
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-text">
-            Cosmetics are earned through gameplay.
+        <div class="hero-buttons">
+            <a href="https://www.youtube.com/watch?v=H3OeGkRFB5M" class="btn primary" target="_blank">Watch Trailer</a>
+            <a href="#features" class="btn secondary">View Features</a>
         </div>
     </div>
 </section>
 
-<script>
-const tutorialBtn=document.getElementById('tutorialBtn')
-const tutorialDropdown=document.getElementById('tutorialDropdown')
-const tutorialOptions=document.querySelectorAll('.tutorial-option')
-const getStartedBtn=document.getElementById('getStartedBtn')
-const getStartedDropdown=document.getElementById('getStartedDropdown')
+<section id="about">
+    <h2 class="section-title">About Ether</h2>
+    <div class="about">
+        Ether brings back the Chapter 1 Season 8 Fortnite experience with
+        classic gameplay, progression systems, and competitive arena.
+        Earn cosmetics by playing, grind levels, and experience one of the
+        most loved seasons in Fortnite history.
+    </div>
+</section>
 
-tutorialBtn.onclick=()=>{
-    tutorialDropdown.classList.toggle('show')
-}
+<section id="features">
+    <h2 class="section-title">Features</h2>
 
-tutorialOptions.forEach(option=>{
-    option.onclick=()=>{
-        getStartedBtn.classList.remove('disabled')
-        getStartedBtn.textContent='Get Started'
-    }
-})
+    <div class="features-grid">
+        <div class="card">
+            <h3>Arena</h3>
+            <p>Competitive arena mode fully integrated with hype progression.</p>
+        </div>
 
-getStartedBtn.onclick=()=>{
-    if(getStartedBtn.classList.contains('disabled')) return
-    getStartedDropdown.classList.toggle('show')
-}
-</script>
+        <div class="card">
+            <h3>Levels</h3>
+            <p>Progress through levels and earn rewards by playing matches.</p>
+        </div>
+
+        <div class="card">
+            <h3>V-Bucks Rewards</h3>
+            <p>Earn V-Bucks on eliminations and wins.</p>
+        </div>
+
+        <div class="card">
+            <h3>XP System</h3>
+            <p>Gain XP for kills and Victory Royales.</p>
+        </div>
+
+        <div class="card">
+            <h3>Hype System</h3>
+            <p>Gain hype for kills and wins in arena.</p>
+        </div>
+
+        <div class="card">
+            <h3>Launcher Stats</h3>
+            <p>View all your stats directly inside the launcher.</p>
+        </div>
+
+        <div class="card">
+            <h3>Server Status</h3>
+            <p>Live server status updates inside the launcher.</p>
+        </div>
+
+        <div class="card">
+            <h3>Mobile Support</h3>
+            <p>Supports both iOS and Android devices.</p>
+        </div>
+
+        <div class="card">
+            <h3>Full Map System</h3>
+            <p>The full map unlocks automatically when over 20 players remain.</p>
+        </div>
+    </div>
+</section>
+
+<section id="issues" class="problems">
+    <h2 class="section-title">Known Issues</h2>
+
+    <div class="problem-list">
+        <div class="problem">
+            Server page in the launcher may be buggy.
+        </div>
+
+        <div class="problem">
+            You may spawn under the map after jumping from the bus. Fix by jumping once the black screen disappears.
+        </div>
+
+        <div class="problem">
+            Player count may sometimes display as 0 in-game.
+        </div>
+    </div>
+</section>
+
+<section id="download" class="cta">
+    <h2>Ready to Play?</h2>
+    <p>Download Ether and relive Fortnite Chapter 1 Season 8 today.</p>
+    <a href="https://dl.fortforge.dev/download/aa6594c5-fce5-4549-93ad-5c74828c6dd9/build" class="btn primary" target="_blank">
+        Download Now
+    </a>
+</section>
+
+<footer>
+    Ether © 2026 — Built for the community.
+</footer>
 
 </body>
 </html>
