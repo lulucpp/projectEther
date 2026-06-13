@@ -1,238 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Project Ether Inspired</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ether</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body,html{height:100%;font-family:'Arial Black',Arial,sans-serif;color:white}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-  background:url('https://i.ibb.co/fdksDXGf/Screenshot-2026-06-13-152946.png') center/cover no-repeat fixed;
-}
-body::before{
-  content:'';
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.5);
+    font-family:Inter, sans-serif;
+    background:
+    linear-gradient(135deg, rgba(10,10,20,.9), rgba(30,10,50,.85)),
+    url('https://i.ibb.co/fdksDXGf/Screenshot-2026-06-13-152946.png') center/cover no-repeat;
+    min-height:100vh;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-.container{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:0 20px;
-  z-index:1;
+header{
+    width:100%;
+    padding:25px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    z-index:10;
 }
 
 .logo{
-  position:fixed;
-  top:20px;
-  left:20px;
-  height:50px;
+    height:42px;
 }
 
 nav{
-  position:fixed;
-  top:20px;
-  right:20px;
-  display:flex;
-  gap:25px;
-  font-weight:bold;
-  font-size:14px;
-  text-transform:uppercase;
+    display:flex;
+    gap:30px;
 }
-nav a{color:white;text-decoration:none}
-nav a:hover{color:#a020f0}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.08em;
+    transition:.25s;
+}
+
+nav a:hover{
+    color:#b84cff;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 20px 40px;
+}
+
+.hero-box{
+    width:100%;
+    max-width:850px;
+    text-align:center;
+    padding:50px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border-radius:28px;
+    box-shadow:0 30px 80px rgba(0,0,0,.45);
+}
+
+.tag{
+    display:inline-block;
+    padding:8px 18px;
+    background:rgba(184,76,255,.15);
+    border:1px solid rgba(184,76,255,.4);
+    border-radius:50px;
+    font-size:12px;
+    text-transform:uppercase;
+    font-weight:700;
+    margin-bottom:25px;
+    letter-spacing:.08em;
+}
 
 h1{
-  font-size:3.5rem;
-  text-shadow:0 0 10px rgba(0,0,0,.7);
-}
-.highlight{color:#a020f0}
-p.sub{
-  margin:10px 0 30px;
-  font-weight:600;
-  text-transform:uppercase;
+    font-size:4.5rem;
+    line-height:1;
+    margin-bottom:20px;
+    font-weight:900;
 }
 
-.buttons{
-  width:100%;
-  max-width:520px;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
+.highlight{
+    background:linear-gradient(90deg,#b84cff,#6d4cff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.desc{
+    font-size:18px;
+    color:rgba(255,255,255,.75);
+    max-width:600px;
+    margin:0 auto 40px;
+    line-height:1.6;
+}
+
+.actions{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    max-width:500px;
+    margin:0 auto;
 }
 
 .group{
-  display:flex;
-  flex-direction:column;
+    width:100%;
 }
 
 .btn{
-  padding:16px;
-  border:none;
-  font-weight:700;
-  text-transform:uppercase;
-  cursor:pointer;
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:14px;
+    font-size:15px;
+    font-weight:800;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:.25s;
 }
 
-.btn-primary{
-  background:#a020f0;
-  color:#000;
-  border-radius:6px 6px 0 0;
+.primary{
+    background:linear-gradient(90deg,#b84cff,#7a32ff);
+    color:#fff;
 }
 
-.blue-btn{
-  background:#3a5fcf;
-  color:#fff;
-  border-radius:6px 6px 0 0;
+.primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(184,76,255,.35);
+}
+
+.secondary{
+    background:linear-gradient(90deg,#3f7cff,#4c56ff);
+    color:#fff;
+}
+
+.secondary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(63,124,255,.35);
 }
 
 .disabled{
-  background:#555!important;
-  color:#aaa!important;
-  pointer-events:none;
+    opacity:.45;
+    pointer-events:none;
 }
 
 .dropdown{
-  display:flex;
-  width:100%;
-  max-height:0;
-  overflow:hidden;
-  opacity:0;
-  transition:all .25s ease;
-  position:relative;
+    margin-top:10px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    max-height:0;
+    opacity:0;
+    overflow:hidden;
+    transition:.3s;
 }
 
 .dropdown.show{
-  max-height:80px;
-  opacity:1;
-}
-
-.dropdown.show::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:2px;
-  background:#a020f0;
-  border-radius:0 0 6px 6px; 
+    max-height:120px;
+    opacity:1;
 }
 
 .dropdown a{
-  flex:1;
-  padding:14px;
-  background:#222;
-  color:white;
-  text-decoration:none;
-  font-weight:700;
-  text-align:center;
+    padding:15px;
+    text-decoration:none;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    color:white;
+    font-weight:700;
+    transition:.25s;
 }
 
-.dropdown a:hover{background:#a020f0}
-
-.dropdown a:first-child{
-  border-right:2px solid #a020f0;
+.dropdown a:hover{
+    background:rgba(184,76,255,.18);
+    border-color:#b84cff;
 }
 
-.dropdown a:first-child{border-radius:0 0 0 6px}
-.dropdown a:last-child{border-radius:0 0 6px 0}
+.footer-text{
+    margin-top:30px;
+    font-size:13px;
+    color:rgba(255,255,255,.45);
+}
 
-@media(max-width:600px){
-  h1{font-size:2rem}
+@media(max-width:768px){
+    header{
+        padding:20px;
+    }
+
+    nav{
+        gap:15px;
+    }
+
+    h1{
+        font-size:2.7rem;
+    }
+
+    .hero-box{
+        padding:35px 25px;
+    }
+
+    .dropdown{
+        grid-template-columns:1fr;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<img src="https://i.ibb.co/N6vd9RFB/Ether.png" class="logo">
+<header>
+    <img src="https://i.ibb.co/N6vd9RFB/Ether.png" class="logo">
 
-<nav>
-  <a href="https://www.youtube.com/watch?v=H3OeGkRFB5M" target="_blank">Trailer</a>
-  <a href="https://discord.gg/mnvGzPWEVb" target="_blank">Discord</a>
-</nav>
+    <nav>
+        <a href="https://www.youtube.com/watch?v=H3OeGkRFB5M" target="_blank">Trailer</a>
+        <a href="https://discord.gg/mnvGzPWEVb" target="_blank">Discord</a>
+    </nav>
+</header>
 
-<div class="container">
-<p class="sub">Play Chapter 1 Season 8 Now</p>
+<section class="hero">
+    <div class="hero-box">
+        <div class="tag">Chapter 1 Season 8 Live</div>
 
-<h1>Relive Chapter 1<br>Fortnite with <span class="highlight">Ether</span></h1>
+        <h1>
+            Return to the Golden Era of <span class="highlight">Fortnite</span>
+        </h1>
 
-<p class="sub">Free cosmetics earned by playing, not paying.</p>
+        <p class="desc">
+            Experience Chapter 1 Season 8 again with unlockable cosmetics, classic gameplay, and a fully rebuilt progression system.
+        </p>
 
-<div class="buttons">
-  <div class="group">
-    <button id="tutorialBtn" class="btn btn-primary">
-      Watch Tutorial!
-    </button>
+        <div class="actions">
+            <div class="group">
+                <button id="tutorialBtn" class="btn primary">
+                    Watch Tutorial
+                </button>
 
-    <div id="tutorialDropdown" class="dropdown">
-      <a href="https://www.youtube.com/watch?v=H3OeGkRFB5M"
-         target="_blank"
-         class="tutorial-option">
-        Chapter 1 Season 8 Trailer
-      </a>
-      <a href="https://www.youtube.com/watch?v=8-qAiQ67Di8"
-         target="_blank"
-         class="tutorial-option">
-        Build Extract
-      </a>
+                <div id="tutorialDropdown" class="dropdown">
+                    <a href="https://www.youtube.com/watch?v=H3OeGkRFB5M" target="_blank" class="tutorial-option">
+                        Season 8 Trailer
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=8-qAiQ67Di8" target="_blank" class="tutorial-option">
+                        Build Extract
+                    </a>
+                </div>
+            </div>
+
+            <div class="group">
+                <button id="getStartedBtn" class="btn secondary disabled">
+                    Complete Tutorial First
+                </button>
+
+                <div id="getStartedDropdown" class="dropdown">
+                    <a href="#">Soon</a>
+                    <a href="https://dl.fortforge.dev/download/aa6594c5-fce5-4549-93ad-5c74828c6dd9/build" target="_blank">
+                        Download Build
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-text">
+            Cosmetics are earned through gameplay.
+        </div>
     </div>
-  </div>
-
-  <div class="group">
-    <button id="getStartedBtn" class="btn blue-btn disabled">
-      Watch Tutorial before getting started
-    </button>
-
-    <div id="getStartedDropdown" class="dropdown">
-      <a href=""
-         target="_blank">
-        Soon
-      </a>
-      <a href="https://dl.fortforge.dev/download/aa6594c5-fce5-4549-93ad-5c74828c6dd9/build"
-         target="_blank">
-        Get Build
-      </a>
-    </div>
-  </div>
-
-</div>
-</div>
+</section>
 
 <script>
-const tutorialBtn=document.getElementById('tutorialBtn');
-const tutorialDropdown=document.getElementById('tutorialDropdown');
-const tutorialOptions=document.querySelectorAll('.tutorial-option');
-const getStartedBtn=document.getElementById('getStartedBtn');
-const getStartedDropdown=document.getElementById('getStartedDropdown');
+const tutorialBtn=document.getElementById('tutorialBtn')
+const tutorialDropdown=document.getElementById('tutorialDropdown')
+const tutorialOptions=document.querySelectorAll('.tutorial-option')
+const getStartedBtn=document.getElementById('getStartedBtn')
+const getStartedDropdown=document.getElementById('getStartedDropdown')
 
 tutorialBtn.onclick=()=>{
-  tutorialDropdown.classList.toggle('show');
-};
+    tutorialDropdown.classList.toggle('show')
+}
 
-tutorialOptions.forEach(opt=>{
-  opt.onclick=()=>{
-    getStartedBtn.classList.remove('disabled');
-    getStartedBtn.textContent='Get Started';
-  };
-});
+tutorialOptions.forEach(option=>{
+    option.onclick=()=>{
+        getStartedBtn.classList.remove('disabled')
+        getStartedBtn.textContent='Get Started'
+    }
+})
 
 getStartedBtn.onclick=()=>{
-  if(getStartedBtn.classList.contains('disabled'))return;
-  getStartedDropdown.classList.toggle('show');
-};
+    if(getStartedBtn.classList.contains('disabled')) return
+    getStartedDropdown.classList.toggle('show')
+}
 </script>
 
 </body>
 </html>
-
-
