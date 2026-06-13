@@ -250,7 +250,7 @@ nav a:hover{
 
 .downloads{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
     gap:20px;
 }
 
@@ -291,10 +291,15 @@ footer{
     color:#666;
 }
 
+@media(max-width:1100px){
+    .downloads{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
 @media(max-width:950px){
     .hero-wrap,
-    .feature-grid,
-    .downloads{
+    .feature-grid{
         grid-template-columns:1fr;
     }
 
@@ -313,6 +318,21 @@ footer{
 
     .float-panel{
         display:none;
+    }
+}
+
+@media(max-width:700px){
+    .downloads,
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        gap:14px;
+    }
+
+    nav a{
+        font-size:12px;
     }
 }
 </style>
@@ -341,8 +361,7 @@ footer{
 
             <p>
                 Ether rebuilds Chapter 1 Season 8 with arena progression,
-                V-Bucks rewards, mobile support, and a launcher built for stats,
-                servers, and updates.
+                V-Bucks rewards, mobile support, launcher stats, and live server status.
             </p>
 
             <div class="hero-actions">
@@ -373,55 +392,69 @@ footer{
 <section class="section" id="features">
     <h2 class="title">Core Features</h2>
     <p class="sub">
-        Built to recreate the original feel while adding progression systems and launcher integrations.
+        Built to recreate the original Chapter 1 Season 8 experience with extra progression systems and launcher integrations.
     </p>
 
     <div class="feature-grid">
         <div class="feature"><h3>Arena</h3><p>Compete and gain hype from kills and wins.</p></div>
         <div class="feature"><h3>Levels</h3><p>Progress through levels with XP rewards.</p></div>
         <div class="feature"><h3>V-Bucks</h3><p>Earn V-Bucks through eliminations and wins.</p></div>
-        <div class="feature"><h3>Launcher Stats</h3><p>Track your performance inside the launcher.</p></div>
-        <div class="feature"><h3>Server Status</h3><p>See live server status and uptime.</p></div>
-        <div class="feature"><h3>Mobile Support</h3><p>Play on iOS and Android.</p></div>
-        <div class="feature"><h3>XP Rewards</h3><p>Earn XP for kills and wins.</p></div>
-        <div class="feature"><h3>Hype Rewards</h3><p>Earn hype through arena matches.</p></div>
-        <div class="feature"><h3>Full Map</h3><p>Map fully unlocks above 20 players.</p></div>
+        <div class="feature"><h3>Launcher Stats</h3><p>Track your performance directly in the launcher.</p></div>
+        <div class="feature"><h3>Server Status</h3><p>See live server status and uptime instantly.</p></div>
+        <div class="feature"><h3>Mobile Support</h3><p>Play on iOS and Android devices.</p></div>
+        <div class="feature"><h3>XP Rewards</h3><p>Gain XP through kills and Victory Royales.</p></div>
+        <div class="feature"><h3>Hype Rewards</h3><p>Rank up in Arena by earning hype.</p></div>
+        <div class="feature"><h3>Full Map</h3><p>Full map unlocks when above 20 players.</p></div>
     </div>
 </section>
 
 <section class="section" id="issues">
     <h2 class="title">Known Issues</h2>
-    <p class="sub">A few current issues still being worked on.</p>
+    <p class="sub">Current issues that may happen while playing.</p>
 
     <div class="issue-list">
         <div class="issue">Server page in launcher may be buggy.</div>
-        <div class="issue">Spawning under the map may happen if you jump too early.</div>
+        <div class="issue">You may spawn under the map if you jump too early.</div>
         <div class="issue">Player count may occasionally display as 0.</div>
     </div>
 </section>
 
 <section class="section" id="download">
     <h2 class="title">Download Ether</h2>
-    <p class="sub">Choose your platform.</p>
+    <p class="sub">Choose what you need to start playing.</p>
 
     <div class="downloads">
+
         <div class="download">
             <h3>PC Launcher</h3>
-            <p>The full launcher experience for Windows.</p>
+            <p>The main launcher for stats, updates, and server info.</p>
             <a class="soon">Soon</a>
+        </div>
+
+        <div class="download">
+            <h3>Fortnite Build</h3>
+            <p>Required build for Chapter 1 Season 8.</p>
+            <a href="https://dl.fortforge.dev/download/aa6594c5-fce5-4549-93ad-5c74828c6dd9/build" target="_blank">
+                Download
+            </a>
         </div>
 
         <div class="download">
             <h3>iOS IPA</h3>
             <p>Install on supported iOS devices.</p>
-            <a href="https://github.com/lulucpp/projectAscend/releases/download/Launcher/Ether-8.51.ipa" target="_blank">Download</a>
+            <a href="https://github.com/lulucpp/projectAscend/releases/download/Launcher/Ether-8.51.ipa" target="_blank">
+                Download
+            </a>
         </div>
 
         <div class="download">
             <h3>Android APK</h3>
             <p>Install on Android devices.</p>
-            <a href="https://www.mediafire.com/file/3euhlg5dquqmdz8/Ether.apk/file" target="_blank">Download</a>
+            <a href="https://www.mediafire.com/file/3euhlg5dquqmdz8/Ether.apk/file" target="_blank">
+                Download
+            </a>
         </div>
+
     </div>
 </section>
 
