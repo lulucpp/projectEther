@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ether</title>
-    <link rel="icon" type="image/png" href="https://i.ibb.co/N6vd9RFB/Ether.png">
+<link rel="icon" type="image/png" href="https://i.ibb.co/N6vd9RFB/Ether.png">
 
 <style>
 *{
@@ -101,17 +101,43 @@ nav a:hover{
     margin-bottom:20px;
 }
 
-.hero h1{
-    font-size:6rem;
-    line-height:.92;
-    margin-bottom:20px;
-    max-width:750px;
+.hero-title{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:24px;
+    line-height:.95;
 }
 
-.hero h1 span{
+.line-one{
+    font-size:2.2rem;
+    font-weight:600;
+    color:#d7d7d7;
+}
+
+.fortnite{
+    font-size:7rem;
+    font-weight:900;
+    letter-spacing:-4px;
     background:linear-gradient(90deg,#8f5cff,#00a2ff,#ff42f6);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
+    text-shadow:0 0 35px rgba(143,92,255,.35);
+}
+
+.line-two{
+    font-size:3rem;
+    font-weight:700;
+    color:white;
+}
+
+.ether-glow{
+    font-size:2.8rem;
+    font-weight:800;
+    color:#9f72ff;
+    text-shadow:
+        0 0 12px rgba(159,114,255,.45),
+        0 0 30px rgba(159,114,255,.25);
 }
 
 .hero p{
@@ -156,10 +182,6 @@ nav a:hover{
     flex-wrap:wrap;
     color:#8a8a8a;
     font-size:14px;
-}
-
-.hero-preview{
-    position:relative;
 }
 
 .preview-box{
@@ -220,18 +242,21 @@ nav a:hover{
     gap:20px;
 }
 
-.feature{
+.feature,
+.download{
     padding:28px;
     border-radius:18px;
     background:rgba(255,255,255,.03);
     border:1px solid rgba(255,255,255,.05);
 }
 
-.feature h3{
+.feature h3,
+.download h3{
     margin-bottom:12px;
 }
 
-.feature p{
+.feature p,
+.download p{
     color:#9a9a9a;
     line-height:1.7;
 }
@@ -255,35 +280,14 @@ nav a:hover{
     gap:20px;
 }
 
-.download{
-    padding:28px;
-    border-radius:18px;
-    background:rgba(255,255,255,.03);
-    border:1px solid rgba(255,255,255,.05);
-}
-
-.download h3{
-    margin-bottom:12px;
-}
-
-.download p{
-    color:#8f8f8f;
-    margin-bottom:18px;
-}
-
 .download a{
     display:inline-block;
+    margin-top:15px;
     padding:14px 18px;
     border-radius:12px;
     background:white;
     color:black;
     font-weight:800;
-}
-
-.download .soon{
-    background:#1b1b24;
-    color:#7f7f7f;
-    pointer-events:none;
 }
 
 footer{
@@ -304,8 +308,16 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .hero h1{
-        font-size:3.8rem;
+    .fortnite{
+        font-size:4.5rem;
+    }
+
+    .line-two{
+        font-size:2rem;
+    }
+
+    .ether-glow{
+        font-size:2rem;
     }
 
     header{
@@ -327,14 +339,6 @@ footer{
     .feature-grid{
         grid-template-columns:1fr;
     }
-
-    nav{
-        gap:14px;
-    }
-
-    nav a{
-        font-size:12px;
-    }
 }
 </style>
 </head>
@@ -347,18 +351,20 @@ footer{
         <a href="#features">Features</a>
         <a href="#issues">Issues</a>
         <a href="#download">Download</a>
-        <a href="https://discord.gg/yZ8v34jyce">Discord</a>
+        <a href="https://discord.gg/yZ8v34jyce" target="_blank">Discord</a>
     </nav>
 </header>
 
 <section class="hero">
     <div class="hero-wrap">
-
         <div>
             <div class="badge">Chapter 1 Season 8 • Reimagined</div>
 
-            <h1>
-                The Classic <span>Fortnite</span> Experience Returns With Ether
+            <h1 class="hero-title">
+                <span class="line-one">Relive The</span>
+                <span class="fortnite">Fortnite</span>
+                <span class="line-two">Chapter 1 Experience</span>
+                <span class="ether-glow">With Ether</span>
             </h1>
 
             <p>
@@ -369,7 +375,7 @@ footer{
             <div class="hero-actions">
                 <a href="#download" class="btn primary">Play Now</a>
                 <a href="#features" class="btn secondary">Explore</a>
-                <a href="https://discord.gg/yZ8v34jyce" class="btn secondary">Join Discord</a>
+                <a href="https://discord.gg/yZ8v34jyce" class="btn secondary" target="_blank">Join Discord</a>
             </div>
 
             <div class="trust-bar">
@@ -388,26 +394,20 @@ footer{
             <div class="float-panel panel-one">Season 8.51</div>
             <div class="float-panel panel-two">Mobile Ready</div>
         </div>
-
     </div>
 </section>
 
 <section class="section" id="features">
     <h2 class="title">Core Features</h2>
-    <p class="sub">
-        Built to recreate the original Chapter 1 Season 8 experience with extra progression systems and launcher integrations.
-    </p>
+    <p class="sub">Built to recreate the original Chapter 1 Season 8 experience.</p>
 
     <div class="feature-grid">
-        <div class="feature"><h3>Arena</h3><p>Compete and gain hype from kills and wins.</p></div>
-        <div class="feature"><h3>Levels</h3><p>Progress through levels with XP rewards.</p></div>
-        <div class="feature"><h3>V-Bucks</h3><p>Earn V-Bucks through eliminations and wins.</p></div>
-        <div class="feature"><h3>Launcher Stats</h3><p>Track your performance directly in the launcher.</p></div>
-        <div class="feature"><h3>Server Status</h3><p>See live server status and uptime instantly.</p></div>
-        <div class="feature"><h3>Mobile Support</h3><p>Play on iOS and Android devices.</p></div>
-        <div class="feature"><h3>XP Rewards</h3><p>Gain XP through kills and Victory Royales.</p></div>
-        <div class="feature"><h3>Hype Rewards</h3><p>Rank up in Arena by earning hype.</p></div>
-        <div class="feature"><h3>Full Map</h3><p>Full map unlocks when above 20 players.</p></div>
+        <div class="feature"><h3>Arena</h3><p>Compete and gain hype.</p></div>
+        <div class="feature"><h3>Levels</h3><p>Progress with XP rewards.</p></div>
+        <div class="feature"><h3>V-Bucks</h3><p>Earn rewards through gameplay.</p></div>
+        <div class="feature"><h3>Launcher Stats</h3><p>Track performance live.</p></div>
+        <div class="feature"><h3>Server Status</h3><p>Monitor live uptime instantly.</p></div>
+        <div class="feature"><h3>Mobile Support</h3><p>Play on iOS and Android.</p></div>
     </div>
 </section>
 
@@ -427,35 +427,35 @@ footer{
     <p class="sub">Choose what you need to start playing.</p>
 
     <div class="downloads">
+        <div class="download">
+            <h3>PC Launcher</h3>
+            <p>Main launcher for updates and stats.</p>
+            <a href="https://github.com/lulucpp/projectEther/releases/download/Launcher/Project.Ether.Launcher.msi" target="_blank">Download</a>
+        </div>
 
-<div class="download">
-    <h3>PC Launcher</h3>
-    <p>The main launcher for stats, updates, and server info.</p>
-    <a href="https://github.com/lulucpp/projectEther/releases/download/Launcher/Project.Ether.Launcher.msi" target="_blank">
-        Download
-    </a>
-</div>
+        <div class="download">
+            <h3>Fortnite Build</h3>
+            <p>Required Chapter 1 Season 8 build.</p>
+            <a href="https://builds.rebootfn.org/8.51.rar" target="_blank">Download</a>
+        </div>
 
-<div class="download">
-    <h3>Fortnite Build</h3>
-    <p>Required build for Chapter 1 Season 8.</p>
-    <a href="https://builds.rebootfn.org/8.51.rar" target="_blank">
-        Download
-    </a>
-</div>
+        <div class="download">
+            <h3>iOS IPA</h3>
+            <p>Install on supported iOS devices.</p>
+            <a href="https://github.com/lulucpp/projectAscend/releases/download/Launcher/Ether-8.51.ipa" target="_blank">Download</a>
+        </div>
 
-<div class="download">
-    <h3>iOS IPA</h3>
-    <p>Install on supported iOS devices.</p>
-    <a href="https://github.com/lulucpp/projectAscend/releases/download/Launcher/Ether-8.51.ipa" target="_blank">
-        Download
-    </a>
-</div>
+        <div class="download">
+            <h3>Android APK</h3>
+            <p>Install on Android devices.</p>
+            <a href="https://github.com/lulucpp/projectEther/releases/download/Launcher/ether-beta-aligned-debugSigned.apk" target="_blank">Download</a>
+        </div>
+    </div>
+</section>
 
-<div class="download">
-    <h3>Android APK</h3>
-    <p>Install on Android devices.</p>
-    <a href="https://github.com/lulucpp/projectEther/releases/download/Launcher/ether-beta-aligned-debugSigned.apk" target="_blank">
-        Download
-    </a>
-</div>
+<footer>
+    Ether © 2026
+</footer>
+
+</body>
+</html>
